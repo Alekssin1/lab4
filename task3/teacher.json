@@ -1,0 +1,52 @@
+[
+    {
+        "Oleg": [
+            {
+                "name": "Database",
+                "programm": [
+                    "requests",
+                    "database creation",
+                    "database normalization"
+                ],
+                "type_of_courses": "Offsite",
+                "location": "Lviv"
+            },
+            {
+                "name": "OOP PYTHON",
+                "programm": [
+                    "Polymorphism in Python",
+                    "Generators in Python",
+                    "Multiple Inheritance in Python",
+                    "Inheritance in Python"
+                ],
+                "type_of_courses": "Local",
+                "lab": "lab#151"
+            }
+        ]
+    },
+    {
+        "Max": [
+            {
+                "name": "Database",
+                "programm": [
+                    "requests",
+                    "database creation",
+                    "database normalization"
+                ],
+                "type_of_courses": "Offsite",
+                "location": "Lviv"
+            },
+            {
+                "name": "OOP PYTHON",
+                "programm": [
+                    "Polymorphism in Python",
+                    "Generators in Python",
+                    "Multiple Inheritance in Python",
+                    "Inheritance in Python"
+                ],
+                "type_of_courses": "Local",
+                "lab": "lab#151"
+            }
+        ]
+    }
+]
