@@ -79,9 +79,7 @@ class Course(ICourse):
         self.__programm = value
 
     def create_course(self):
-        course = {}
-        course['name'] = self.name
-        course['programm'] = self.programm
+        course = {'name': self.name, 'programm': self.programm}
         if isinstance(self, LocalCourse):
             course['type_of_courses'] = "Local"
             course['lab'] = self.lab
@@ -112,7 +110,7 @@ class ILocalCourse(ABC):
 
     @lab.setter
     @abstractmethod
-    def lab(self):
+    def lab(self, value):
         pass
 
 
@@ -145,7 +143,7 @@ class IOffsiteCourse(ABC):
 
     @location.setter
     @abstractmethod
-    def location(self):
+    def location(self, value):
         pass
 
 
@@ -210,14 +208,11 @@ class Teacher(ITeacher):
             teacher_courses = json.load(file)
         with open("course.json", 'r') as f:
             courses = json.load(f)
-        info_about_teacher = {}
-        info_about_teacher[self.name] = []
+        info_about_teacher = {self.name: []}
         for course in courses:
             if course["teacher"] == self.name:
-                teacher_course_info = {}
-                teacher_course_info["name"] = course["name"]
-                teacher_course_info["programm"] = course["programm"]
-                teacher_course_info["type_of_courses"] = course["type_of_courses"]
+                teacher_course_info = {"name": course["name"], "programm": course["programm"],
+                                       "type_of_courses": course["type_of_courses"]}
                 try:
                     teacher_course_info["location"] = course["location"]
                 except:
@@ -265,10 +260,9 @@ class CourseFactory:
     def form_local_course(name, program, teacher, lab):
         return LocalCourse(name, program, teacher, lab)
 
-    @staticmethod
-    def form_offsite_course(name, program, teacher, location):
-        return OffsiteCourse(name, program, teacher, location)
 
+def form_offsite_course(name, program, teacher, location):
+    return OffsiteCourse(name, program, teacher, location)
 
 
 course_factory = CourseFactory
